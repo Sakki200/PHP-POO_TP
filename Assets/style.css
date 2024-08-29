@@ -1,0 +1,151 @@
+@import url(./reset.css);
+* {
+  font-family: "Raleway";
+}
+
+:root {
+  --principal: rgb(115, 128, 172);
+  --secondary: rgb(32, 49, 99);
+  --bg-object: rgb(235, 235, 235);
+}
+
+body {
+  & header {
+    color: white;
+    background-color: var(--principal);
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & li {
+      font-size: 2.4rem;
+      font-weight: 600;
+      &:hover {
+        cursor: pointer;
+        font-weight: 700;
+      }
+    }
+  }
+
+  & .home {
+    margin-top: 8rem;
+
+    & h1 {
+      font-weight: 300;
+      text-align: center;
+      color: var(--secondary);
+      font-size: 4.8rem;
+      margin-bottom: 2.4rem;
+    }
+    & .finder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 8rem;
+      & select {
+        height: 2.4rem;
+        width: 20rem;
+      }
+      & input {
+        padding-left: 1.6rem;
+        border: solid 0.1rem;
+        outline: none;
+        border-radius: 1rem;
+        height: 2.4rem;
+        width: 40rem;
+        margin-bottom: 2rem;
+      }
+      & button {
+        font-size: 2.4rem;
+        display: block;
+        margin: auto;
+        background-color: var(--principal);
+        color: white;
+        height: 4rem;
+        width: 28rem;
+        border: none;
+        border-radius: 4rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: var(--secondary);
+          font-weight: 500;
+        }
+      }
+    }
+    & .display {
+      width: 60%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4.8rem;
+
+      & .card {
+        background-color: var(--bg-object);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0.8rem;
+        padding: 2.4rem;
+        & h2 {
+          font-size: 2.4rem;
+          text-align: center;
+          margin-bottom: 2.4rem;
+        }
+        & h3 {
+          font-size: 2rem;
+          font-weight: 300;
+        }
+        & p {
+          padding: 2.4rem 0;
+        }
+        & button {
+          font-size: 2.4rem;
+          display: block;
+          margin: auto;
+          background-color: var(--principal);
+          color: white;
+          height: 3.2rem;
+          width: 20rem;
+          border: none;
+          border-radius: 4rem;
+
+          &:hover {
+            cursor: pointer;
+            background-color: var(--secondary);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  & .showArticle {
+    & h1 {
+      color: var(--secondary);
+      font-size: 4.8rem;
+      text-align: center;
+      margin-top: 4.8rem;
+      margin-bottom: 3.2rem;
+    }
+    & h2 {
+      font-weight: 400;
+      font-size: 2.4rem;
+      padding-left: 40rem;
+      margin-bottom: 0.4rem;
+    }
+    & h3 {
+      padding-left: 40rem;
+      font-weight: 400;
+      font-size: 2.4rem;
+      margin-bottom: 4.8rem;
+    }
+    & p {
+        background-color: var(--bg-object);
+      border-radius: 0.8rem;
+      margin: 0 40rem;
+      padding: 1.6rem;
+      line-height: 3.2rem;
+      letter-spacing: 0.15rem;
+    }
+  }
+}
