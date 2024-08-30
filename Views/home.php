@@ -26,6 +26,7 @@
             <h3>Auteur : ' . $research['author'] . '</h3>
             <h3>Categorie : ' . $research['category'] . '</h3>
             <p>Résumé : <br>' . $research['resume'] . '</p>
+            <a href="index.php?pg=delete&id= ' . $id . '"><button>DELETE</button></a><br>
             <a href="index.php?pg=article&id=' . $id . '"><button>ARTICLE</button></a>
             </div>';
             }

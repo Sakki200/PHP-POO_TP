@@ -3,6 +3,7 @@
 require_once("./Models/Database.class.php");
 require_once("./Models/Article.class.php");
 require_once("./Models/Table.class.php");
+require_once("./Models/Delete.class.php");
 
 $page = $_GET["pg"] ?? "home";
 if (!file_exists("./Views/" . $page . ".php")) {
@@ -12,6 +13,7 @@ if (!file_exists("./Views/" . $page . ".php")) {
 
 $article = new Article();
 $table = new Table();
+$delete = new Delete();
 
 
 if (isset($_GET['select']) && isset($_GET['search'])) {
