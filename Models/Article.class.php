@@ -40,6 +40,15 @@ class Article extends Database
         $data = $request->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+    public function getAllCategories()
+    {
+        $request = $this->db->prepare("SELECT * FROM category");
+
+        $request->execute();
+
+        $data = $request->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
     public function getByCategory($category)
     {
         $request = $this->db->prepare($this->base . "WHERE category LIKE :category LIMIT 3");

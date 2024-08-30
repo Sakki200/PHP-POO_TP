@@ -29,20 +29,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-
-CREATE TABLE IF NOT EXISTS `user` (
-    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `name` varchar(50) NOT NULL,
-    `first_name` varchar(50) NOT NULL,
-    `dob` DATE NOT NULL,
-    `date_inscription` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE = InnoDB AUTO_INCREMENT = 5 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
-
---
 -- Structure de la table `category`
 --
 
@@ -62,15 +48,13 @@ DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `category_id` int(11) DEFAULT NULL,
-    `user_id` int(11) DEFAULT NULL,
     `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
     `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
     `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
     `resume` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-    `publication_date` date DEFAULT NULL,
+    `publication_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`),
-    KEY `IDX_C015514312469DE2` (`category_id`),
-    KEY `IDX_C0155143A76ED395` (`user_id`)
+    KEY `IDX_C015514312469DE2` (`category_id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 --
@@ -81,8 +65,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
 -- Contraintes pour la table `blog`
 --
 ALTER TABLE `blog`
-ADD CONSTRAINT `FK_C015514312469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
-ADD CONSTRAINT `FK_C0155143A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+ADD CONSTRAINT `FK_C015514312469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
 
 COMMIT;
 

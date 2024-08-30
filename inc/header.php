@@ -16,6 +16,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">ACCUEIL</a></li>
+                <li><a href="index.php?pg=add">AJOUT TABLE</a></li>
             </ul>
         </nav>
     </header>
